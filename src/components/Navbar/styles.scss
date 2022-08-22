@@ -1,0 +1,16 @@
+@use '../.././styles/variables';
+
+.navbar {
+    background-color: variables.$lighter-dark;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 3rem;
+    height: 64px;
+
+    & h3 {
+        font-size: 2rem;
+        color: variables.$light;
+    }
+
+}

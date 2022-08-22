@@ -1,0 +1,29 @@
+@use 'variables';
+
+@mixin theme($bg, $color) {
+    background: $bg;
+    color: $color;
+    $spinner-bg: red;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Montserrat, sans-serif;
+}
+
+body {
+    transition: background-color .4s, color .4s;
+}
+
+.dark {
+    @include theme($bg: variables.$dark, $color: variables.$light);
+
+}
+
+.light {
+    @include theme($bg: variables.$light, $color: variables.$dark);
+}
