@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 export default function useTheme() {
     const [theme, setTheme] = useState(localStorage.getItem('theme') || 'dark')
-    console.log(theme);
+
     useEffect(() => {
         if (theme === 'dark') {
             if (document.body.classList.contains('light')) {

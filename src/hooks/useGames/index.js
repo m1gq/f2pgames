@@ -3,8 +3,13 @@ import getGames from '../../services/getGames'
 
 export default function useGames(url) {
     const [games, setGames] = useState(null)
+    const [loading, setLoading] = useState(true)
     useEffect(() => {
-        getGames(url).then(games => setGames(games))
+        setLoading(true)
+        getGames(url).then(games => {
+            setGames(games)
+            setLoading(false)
+        })
     }, [])
-    return {games, setGames}
+    return {games, setGames, loading}
 }
