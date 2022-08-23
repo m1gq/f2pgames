@@ -1,0 +1,15 @@
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem 0;
+    padding: 3rem 5rem;
+    &:hover {
+
+    }
+
+    @media screen and (max-width: 45rem) {
+        padding: 2rem;
+        place-items: center;
+    }
+}

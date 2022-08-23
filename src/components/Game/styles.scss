@@ -1,0 +1,49 @@
+@use '../../styles/variables';
+@mixin theme($bg, $text-clr) {
+    background-color: $bg;
+    color: $text-clr;
+}
+
+.card {
+    @include theme(variables.$lighter-dark, variables.$light);
+    width: 260px;
+    box-shadow: variables.$shadow;
+    border-radius: variables.$radius;
+    overflow: hidden;
+    font-size: map-get(variables.$font-size, small);
+    transition: transform .4s ease;
+    cursor: pointer;
+    img {
+        width: 100%;
+    }
+
+    .content {
+        padding: .675rem;
+        width: 100%;
+    }
+
+    h3 {
+        margin-bottom: .375rem;
+        font-size: map-get(variables.$font-size, small);
+    }
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+.content-category {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .platform {
+        font-size: map-get(variables.$font-size, small);
+    }
+
+    .genre {
+        padding: 4px 8px;
+        background-color: variables.$blue;
+        border-radius: variables.$radius;
+        color: variables.$light;
+    }
+}
