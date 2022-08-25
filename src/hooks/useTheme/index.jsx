@@ -15,7 +15,7 @@ export default function useTheme() {
                 document.body.classList.remove('dark')
             }
             localStorage.setItem('theme', 'light')
-            localStorage.theme === false && document.body.classList.add('light')
+            document.body.classList.add('light')
         }
     }, [theme])
     return { theme, setTheme }
