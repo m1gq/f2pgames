@@ -1,0 +1,27 @@
+@use '../../styles/variables';
+.showcase {
+    padding: 2rem 5rem;
+    background-color: variables.$lighter-dark;
+    box-shadow: variables.$shadow;
+
+    .showcase-title {
+        font-size: map-get(variables.$font-size, extra-large);
+        font-weight: map-get(variables.$weight, bold);
+        color: variables.$blue;
+    }
+
+    .showcase-text {
+        font-size: map-get(variables.$font-size, medium);
+        font-weight: map-get(variables.$weight, regular);
+        margin-block: .6rem 1rem;
+
+        & span {
+            color: rgb(235, 187, 19);
+        }
+    }
+    #{&}-games {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 2rem 0;
+    }
+}

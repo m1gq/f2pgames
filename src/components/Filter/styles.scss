@@ -1,0 +1,15 @@
+.filter-container {
+    position: relative;
+    text-align: center;
+    padding: 2rem;
+    padding-bottom: 0;
+}
+
+.filter {
+    display: inline;
+    min-height: 10vh;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    gap: 1.4rem;
+}

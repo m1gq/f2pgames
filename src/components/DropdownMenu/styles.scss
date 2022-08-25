@@ -1,0 +1,70 @@
+@use '../../styles/variables';
+
+.dropdown-menu-wrapper {
+    position: relative;
+    width: fit-content;
+    margin-inline: auto;
+}
+
+.menu {
+    position: relative;
+    cursor: pointer;
+    font-size: 1rem;
+    color: variables.$darker-light;
+    transition: color .2s ease-in-out;
+    &:hover {
+        color: variables.$light;
+    }
+    &::after {
+        content: '';
+
+        display: inline-block;
+        vertical-align: 0.125em;
+        margin-left: .3rem;
+        border-top: .3em solid;
+        border-right: 0.3em solid variables.$transparent;
+        border-left: 0.3em solid variables.$transparent;
+    }
+}
+
+.sub-menu {
+    position: absolute;
+    top: 5vh;
+    font-size: 1rem;
+    background-color: variables.$lighter-dark;
+    color: variables.$darker-light;
+    border-radius: variables.$radius;
+    box-shadow: variables.$shadow;
+    min-width: 160px;
+    z-index: 60;
+    .separator {
+        height: 2px;
+        width: 100%;
+        background-color: variables.$extra-light-dark;
+        margin-block: .375rem;
+    }
+
+    a {
+        display: block;
+        color: variables.$darker-light;
+        padding: .5rem 1rem;
+
+        &:hover {
+            color: variables.$light;
+        }
+    }
+
+    .category-all {
+        color: variables.$blue;
+    }
+    li:hover {
+        background-color: variables.$dark;
+    }
+
+    .active-link {
+        pointer-events: none;
+        background-color: variables.$darker-light;
+        color: variables.$dark;
+    }
+
+}

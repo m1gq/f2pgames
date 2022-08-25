@@ -5,7 +5,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(to left, rgb(0, 133, 218), rgb(90, 80, 210));
+    background: linear-gradient(to left, variables.$blue, variables.$purple);
     overflow: hidden;
     border-radius: variables.$radius;
     color: white;
