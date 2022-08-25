@@ -1,0 +1,71 @@
+@use '../../styles/variables';
+.btn {
+    display: inline;
+    vertical-align: middle;
+    background: variables.$blue;
+    border: none;
+    color: variables.$light;
+    cursor: pointer;
+    box-shadow: variables.$shadow;
+    border-radius: variables.$radius;
+    border: 1px solid variables.$transparent;
+    padding: 8px;
+    margin-block: 1rem;
+    text-align: center;
+    font-weight: map-get(variables.$weight, light);
+    &:hover {
+        background-color: variables.$transparent;
+        border-color: variables.$low-sat-blue;
+    }
+    transition: background-color .3s ease-in-out;
+}
+
+.no-bg {
+    background: variables.$transparent;
+    border-color: variables.$low-sat-blue;
+
+    &:hover {
+        background-color: rgb(228, 161, 31);
+        border-color: variables.$transparent;
+    }
+}
+
+._favorites {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    background-color: variables.$transparent;
+    border-color: variables.$light;
+    box-shadow: none;
+    fill: variables.$light;
+    &:hover {
+        background-color: variables.$light;
+        border-color: variables.$light;
+        fill: rgb(255, 214, 0);
+    }
+    &::after {
+        content: 'Add to Favorites';
+        position: absolute;
+        transform: translate(40px, -30px);
+        font-size: map-get(variables.$font-size, small);
+        color: white;
+        z-index: 100;
+        opacity: 0;
+        visibility: hidden;
+        overflow: visible;
+        padding: 4px 6px;
+        text-align: center;
+        border-radius: variables.$radius;
+        background-color: variables.$extra-light-dark;
+        transition: opacity .1s ease;
+        transition-delay: 50ms;
+    }
+    &:hover::after {
+        transition-delay: 400ms;
+        visibility: visible;
+        opacity: 1
+    }
+}

@@ -1,0 +1,23 @@
+$weight: (
+    "bold": 700,
+    "regular": 400,
+    "light": 300
+);
+$font-size: (
+    "small": .775rem,
+    "medium": 1rem,
+    "large": 1.4rem,
+    "extra-large": 2rem
+);
+
+$dark: hsl(0, 0%, 11%);
+$blue: hsl(203, 100%, 42%);
+$low-sat-blue: hsla(210, 4%, 32%, 1);
+$purple: hsl(244, 59%, 56%);
+$lighter-dark: hsl(0, 0%, 17%);
+$extra-light-dark: hsl(0, 0%, 27%);
+$light: hsl(0, 0%, 100%);
+$darker-light: hsl(0, 0%, 80%);
+$transparent: rgba(255, 255, 255, 0);
+$shadow: rgba(24, 24, 24, 0.5) 0px 7px 29px 0px;
+$radius: 4px;
