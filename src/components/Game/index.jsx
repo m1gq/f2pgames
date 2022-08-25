@@ -1,17 +1,12 @@
 import './styles.scss'
-export default function Game({ id, title, thumbnail, genre, platform }) {
-
+export default function Game({ children, thumbnail, title, modifier = '' }) {
     return (
-        <div className="card">
+        <div className={`card ${modifier}`}>
             <div className="img-wrapper">
-                <img src={thumbnail} alt={title}/>
+                <img src={thumbnail} alt={title} title={title}/>
             </div>
             <div className="content">
-                <h3>{title}</h3>
-                <div className="content-category">
-                    <span className="platform">{platform}</span>
-                    <span className="genre">{genre}</span>
-                </div>
+                {children}
             </div>
         </div>
     )
