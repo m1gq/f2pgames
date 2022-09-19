@@ -14,7 +14,6 @@ import { tags, sorters } from '../../services/getGameTags'
 import { useNavigate, useLocation, useSearchParams, useResolvedPath, Link } from "react-router-dom";
 
 export default function Games({ searchUrl = '', platform, redirect }) {
-    console.log(searchUrl);
     const {games, randomGames, setGames, loading, setUrl} = useGames(searchUrl)
     return (
         <>
@@ -24,8 +23,8 @@ export default function Games({ searchUrl = '', platform, redirect }) {
                         <p className="showcase-text"><span>{games.length}</span> Results for {platform === 'browser' && 'Web Browser' || 'PC'} Games</p>
                         <div className="showcase-games">{
                             randomGames.map(game => (
-                                <Link to={`${game.id}`}>
-                                    <Game key={game.id} thumbnail={game.thumbnail} title={game.title} modifier={'showcase-card'}>
+                                <Link to={`${game.id}`} key={game.id} >
+                                    <Game thumbnail={game.thumbnail} title={game.title} modifier={'showcase-card'}>
                                         <div className="content-category">
                                             <button className="btn _favorites"><HeartIcon /></button>
                                             <div className="tags" >
@@ -60,8 +59,8 @@ export default function Games({ searchUrl = '', platform, redirect }) {
                         <div className="card-container">
                             {games.map(game => {
                                 return (
-                                    <Link to={`${game.id}`}>
-                                        <Game key={game.id} thumbnail={game.thumbnail} title={game.title}>
+                                    <Link to={`${game.id}`} key={game.id}>
+                                        <Game thumbnail={game.thumbnail} title={game.title}>
                                             <h3>{game.title}</h3>
                                             <p>{game.short_description}</p>
                                             <div className="content-category">

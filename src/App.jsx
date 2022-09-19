@@ -56,9 +56,9 @@ function App() {
 
             <Route path="/browser/:gameId" element={ <GameDetails /> } />
             // Loop through the Array and create a Route with each tag
-            {browser_tags.map(tag => <Route path={`/browser/${tag.toLowerCase().split(' ').join('-')}/:gameId`} element={ <GameDetails /> } />)}
+            {browser_tags.map(tag => <Route  key={nanoid()} path={`/browser/${tag.toLowerCase().split(' ').join('-')}/:gameId`} element={ <GameDetails /> } />)}
             <Route path="/games/:gameId" element={ <GameDetails /> } />
-            {tags.map(tag => <Route path={`/games/${tag.toLowerCase().split(' ').join('-')}/:gameId`} element={ <GameDetails /> } />)}
+            {tags.map(tag => <Route key={nanoid()} path={`/games/${tag.toLowerCase().split(' ').join('-')}/:gameId`} element={ <GameDetails /> } />)}
             { sorters.map(sort =>
                 <Route
                     key={nanoid()}
