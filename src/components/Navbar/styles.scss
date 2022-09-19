@@ -1,12 +1,13 @@
 @use '../.././styles/variables';
 
 nav {
-    position: sticky;
+    position: fixed;
     top: 0;
-    left: 0;
+    backdrop-filter: blur(15px);
     width: 100vw;
     z-index: 100;
-    background-color: variables.$lighter-dark;
+    background-color: hsl(0, 0%, 17%, 0.8);
+    box-shadow: variables.$shadow;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -18,4 +19,19 @@ nav {
         color: variables.$light;
     }
 
+    .nav-links {
+        display: flex;
+        gap: 2rem;
+        justify-content: space-around;
+        & a {
+
+            font-size: 1rem;
+            font-weight: map-get(variables.$weight, regular);
+            color: variables.$darker-light;
+            transition: color .2s ease-in-out;
+            &:hover {
+                color: variables.$light;
+            }
+        }
+    }
 }

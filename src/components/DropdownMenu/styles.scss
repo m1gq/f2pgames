@@ -2,8 +2,6 @@
 
 .dropdown-menu-wrapper {
     position: relative;
-    width: fit-content;
-    margin-inline: auto;
 }
 
 .menu {
@@ -29,6 +27,9 @@
 
 .sub-menu {
     position: absolute;
+    top: 10vh;
+    display: flex;
+    flex-direction: column;
     top: 5vh;
     font-size: 1rem;
     background-color: variables.$lighter-dark;
@@ -36,7 +37,7 @@
     border-radius: variables.$radius;
     box-shadow: variables.$shadow;
     min-width: 160px;
-    z-index: 60;
+    z-index: 30;
     .separator {
         height: 2px;
         width: 100%;
@@ -44,11 +45,11 @@
         margin-block: .375rem;
     }
 
-    a {
+    a, p {
         display: block;
         color: variables.$darker-light;
         padding: .5rem 1rem;
-
+        cursor: pointer;
         &:hover {
             color: variables.$light;
         }
@@ -59,12 +60,6 @@
     }
     li:hover {
         background-color: variables.$dark;
-    }
-
-    .active-link {
-        pointer-events: none;
-        background-color: variables.$darker-light;
-        color: variables.$dark;
     }
 
 }

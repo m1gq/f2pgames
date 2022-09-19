@@ -1,17 +1,17 @@
 $weight: (
-    "bold": 700,
-    "regular": 400,
-    "light": 300
+    "bold": 900,
+    "regular": 600,
+    "light": 500
 );
 $font-size: (
-    "small": .775rem,
-    "medium": 1rem,
+    "small": .8rem,
+    "medium": 1.2rem,
     "large": 1.4rem,
-    "extra-large": 2rem
+    "extra-large": 3rem
 );
 
 $dark: hsl(0, 0%, 11%);
-$blue: hsl(203, 100%, 42%);
+$blue: rgb(0, 138, 237);
 $low-sat-blue: hsla(210, 4%, 32%, 1);
 $purple: hsl(244, 59%, 56%);
 $lighter-dark: hsl(0, 0%, 17%);

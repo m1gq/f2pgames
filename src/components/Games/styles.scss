@@ -11,6 +11,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 2rem 0;
+    place-items: center;
     &:hover {
 
     }
@@ -19,4 +20,11 @@
         padding: 2rem;
         place-items: center;
     }
+}
+
+.sort-by {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
 }

@@ -4,7 +4,6 @@ import './styles.scss'
 export default function DropdownMenu({ title, children }) {
     const [isOpen, setIsOpen] = useState(false)
     function handleClick() {
-        console.log(isOpen);
         setIsOpen(!isOpen)
     }
     return (

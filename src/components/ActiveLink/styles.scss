@@ -1,0 +1,5 @@
+@use '../../styles/variables';
+.active-link {
+    pointer-events: none;
+    color: variables.$light !important;
+}

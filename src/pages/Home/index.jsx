@@ -1,10 +1,9 @@
 import Hero from '../../components/Hero'
-import Loading from '../../components/Loading'
-import Games from '../../components/Games'
+import './styles.scss'
 export default function Home() {
     return (
-        <div>
+        <main >
             <Hero />
-        </div>
+        </main>
     )
 }

@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom'
+import './styles.scss'
 export default function ActiveLink({ to, children }) {
     return (
         <NavLink

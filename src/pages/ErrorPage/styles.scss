@@ -1,0 +1,11 @@
+@use '../../styles/variables';
+.error {
+    height: calc((100vh - 64px));
+    display: grid;
+    place-content: center;
+    text-align: center;
+
+    h1 {
+        font-size: map-get(variables.$font-size, extra-large)
+    }
+}

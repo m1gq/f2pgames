@@ -1,32 +1,50 @@
 @use '../../styles/variables';
 .btn {
-    display: inline;
+    display: inline-block;
     vertical-align: middle;
-    background: variables.$blue;
     border: none;
-    color: variables.$light;
     cursor: pointer;
-    box-shadow: variables.$shadow;
+    box-shadow: var(--shadow) 0px 6px 24px;
     border-radius: variables.$radius;
-    border: 1px solid variables.$transparent;
+    background: var(--bg);
+    fill: var(--bg);
+    color: variables.$light;
     padding: 8px;
-    margin-block: 1rem;
     text-align: center;
+    font-size: map-get(variables.$font-size, medium);
     font-weight: map-get(variables.$weight, light);
+    user-select: none;
+    transition: background-color .3s ease-in-out, color .3s ease-in-out, transform .3s ease-in-out, box-shadow .3s ease-in-out;
     &:hover {
-        background-color: variables.$transparent;
-        border-color: variables.$low-sat-blue;
+        transform: translateY(4px);
+        fill: variables.$light;
+        background-color: variables.$light;
+        color: var(--bg);
+        box-shadow: 2px 4px 2px -4px rgba(79,79,79,0.2) inset;
+
     }
-    transition: background-color .3s ease-in-out;
+}
+
+.test {
+    background: var(--bg);
+    margin-block: .675rem;
 }
 
 .no-bg {
-    background: variables.$transparent;
-    border-color: variables.$low-sat-blue;
+    background: variables.$lighter-dark;
 
     &:hover {
         background-color: rgb(228, 161, 31);
-        border-color: variables.$transparent;
+    }
+}
+
+.--bg-yellow {
+    background-color: rgb(228, 161, 31);
+
+    &:hover {
+        transform: scale(1.1);
+        background: variables.$lighter-dark;
+        color: var(--bg);
     }
 }
 
@@ -34,18 +52,30 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    height: 30px;
-    width: 30px;
+    height: 25px;
+    width: 25px;
     text-align: center;
-    background-color: variables.$transparent;
     border-color: variables.$light;
     box-shadow: none;
     fill: variables.$light;
     &:hover {
-        background-color: variables.$light;
-        border-color: variables.$light;
-        fill: rgb(255, 214, 0);
+        transform: none;
+        background-color: transparent;
+        box-shadow: none;
+        fill: rgb(233, 98, 126);
+
     }
+
+    & svg {
+        transform: scale(1.8);
+        transition: transform .3s cubic-bezier(0.34,-0.29, 0.72, 1.45);
+
+    }
+
+    &:hover svg {
+        transform: scale(2);
+    }
+
     &::after {
         content: 'Add to Favorites';
         position: absolute;
@@ -68,4 +98,14 @@
         visibility: visible;
         opacity: 1
     }
+}
+.--filter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 6px;
+    height: 30px;
+    width: 30px;
+    fill: variables.$light;
 }

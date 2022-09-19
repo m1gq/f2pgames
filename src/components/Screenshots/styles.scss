@@ -1,0 +1,6 @@
+@use '../../styles/variables';
+
+.screenshot-title {
+    color: variables.$light !important;
+    margin-bottom: 1rem;
+}
