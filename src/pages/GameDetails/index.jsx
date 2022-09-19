@@ -1,5 +1,4 @@
 import './styles.scss'
-import '../../components/game/styles.scss'
 import useGame from '../../hooks/useGame'
 import { useParams } from 'react-router-dom'
 import Loading from '../../components/Loading'
