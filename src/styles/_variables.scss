@@ -10,6 +10,15 @@ $font-size: (
     "extra-large": 3rem
 );
 
+$breakpoints: (
+    "phone": 390px,
+    "phone-landscape": 576px,
+    "tablet": 768px,
+    "laptop": 992px,
+    "large-device": 1200px
+);
+
+
 $dark: hsl(0, 0%, 11%);
 $blue: rgb(0, 138, 237);
 $low-sat-blue: hsla(210, 4%, 32%, 1);

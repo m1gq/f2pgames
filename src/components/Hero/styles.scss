@@ -7,6 +7,8 @@
     overflow: hidden;
     isolation: isolate;
 }
+
+
 .hero {
     position: relative;
     height: calc(100vh - 64px);
@@ -14,10 +16,14 @@
 
     background: linear-gradient(120deg, variables.$dark 60%, rgb(56, 56, 56) 115%);
     transition: transform 400ms ease-in-out, opacity 400ms ease-in-out;
+
+
     .hero-title {
         font-size: map-get(variables.$font-size, 'extra-large');
         width: 20ch;
+        letter-spacing: 1px;
     }
+
 
     .hero-paragraph {
         width: 50ch;
@@ -32,12 +38,26 @@
             background: rgb(252, 194, 95);
         }
     }
+    @media screen and (max-width: map-get(variables.$breakpoints, 'phone-landscape')) {
+        text-align: center;
+        width: auto;
+        .hero-title {
+            font-size: 2rem;
+            width: auto;
+        }
+
+        .hero-paragraph {
+            width: auto;
+            text-align: left;
+        }
+    }
 }
 
 .nextCarouselItem {
     position: absolute;
     opacity: .3;
     transform: translateX(100vw);
+    pointer-events: none;
 }
 
 .visible {
@@ -45,16 +65,34 @@
     opacity: 1;
 }
 
-.img-containers {
-    position: relative;
-    width: 100vw;
-}
-
 .img-test {
-    width: 900px;
+    width: 100%;
     position: absolute;
     z-index: -1;
-    right: -140px;
-    top: -230px;
+    top: -240px;
+    right: -400px;
     filter: drop-shadow(16px 16px 10px variables.$lighter-dark);
+
+    @media screen and (max-width: map-get(variables.$breakpoints, 'laptop')) {
+        top: -160px;
+    }
+
+    @media screen and (max-width: map-get(variables.$breakpoints, 'tablet')) {
+        left: 50%;
+        transform: translate(-50%);
+        bottom: -270px;
+        top: initial;
+    }
+
+    @media screen and (max-width: map-get(variables.$breakpoints, 'phone-landscape')) {
+        left: 50%;
+        transform: translate(-50%);
+        bottom: -100px;
+
+    }
+
+    @media screen and (max-width: map-get(variables.$breakpoints, 'phone-landscape')) {
+        bottom: -50px;
+
+    }
 }

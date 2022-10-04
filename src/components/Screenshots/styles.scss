@@ -1,6 +1,32 @@
 @use '../../styles/variables';
 
 .screenshot-title {
-    color: variables.$light !important;
+    color: variables.$light;
     margin-bottom: 1rem;
+}
+
+.screenshots {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 10px;
+    overflow: hidden;
+    & div {
+        height: 250px;
+        width: 100%;
+        overflow: hidden;
+        border-radius: variables.$radius;
+    }
+    & img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        cursor: pointer;
+        opacity: .8;
+        z-index: 30;
+        transition: opacity 300ms ease-in-out;
+        &:hover {
+            opacity: 1;
+        }
+    }
 }

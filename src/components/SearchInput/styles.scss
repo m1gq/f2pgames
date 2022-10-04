@@ -1,1 +1,29 @@
 @use '../.././styles/variables';
+
+.search-input {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    gap: 10px;
+    height: 24px;
+    background: variables.$lighter-dark;
+    border-radius: variables.$radius;
+    box-shadow: variables.$shadow;
+
+    &:focus-within > .search-icon {
+        fill: variables.$blue;
+    }
+}
+
+.input {
+    background: variables.$transparent;
+    border: none;
+    outline: none;
+    color: variables.$light;
+    padding: 10px 0;
+}
+
+.search-icon {
+    fill: variables.$light;
+    transition: fill 400ms ease-in-out;
+}

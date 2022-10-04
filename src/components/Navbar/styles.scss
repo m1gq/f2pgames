@@ -3,7 +3,7 @@
 nav {
     position: fixed;
     top: 0;
-    backdrop-filter: blur(15px);
+    backdrop-filter: blur(10px);
     width: 100vw;
     z-index: 100;
     background-color: hsl(0, 0%, 17%, 0.8);
@@ -17,21 +17,82 @@ nav {
     & .nav-title {
         font-size: 2rem;
         color: variables.$light;
+        z-index: 100;
+    }
+
+
+}
+
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    width: 65%;
+    & a {
+
+        font-size: 1rem;
+        font-weight: map-get(variables.$weight, regular);
+        color: variables.$darker-light;
+        transition: color .2s ease-in-out;
+        padding: 8px;
+        &:hover {
+            color: variables.$light;
+        }
+    }
+}
+
+.nav-menu {
+    cursor: pointer;
+    visibility: hidden;
+    border: 1px solid variables.$low-sat-blue;
+}
+
+@media screen and (max-width: map-get(variables.$breakpoints, 'laptop')) {
+    .nav-links {
+        flex-direction: column;
+    }
+
+    .nav-menu {
+        visibility: visible;
+        z-index: 100;
     }
 
     .nav-links {
-        display: flex;
-        gap: 2rem;
-        justify-content: space-around;
-        & a {
-
-            font-size: 1rem;
-            font-weight: map-get(variables.$weight, regular);
-            color: variables.$darker-light;
-            transition: color .2s ease-in-out;
-            &:hover {
-                color: variables.$light;
-            }
-        }
+        position: absolute;
+        background-color: hsl(0, 0%, 12%, .99);
+        padding: 1rem;
+        text-align: center;
+        top: 10vh;
+        right: 5vw;
+        transform: translateY(-400px);
+        opacity: 0;
+        transition: transform 300ms linear, opacity 300ms ease-in-out;
     }
+
+    .open-nav {
+        transform: translateY(0);
+        opacity: 1
+    }
+}
+
+.action-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: variables.$purple;
+    overflow: hidden;
+    border-radius: variables.$radius;
+    color: white;
+    height: 30px;
+    cursor: pointer;
+
+    & a {
+        z-index: 2;
+        color: variables.$light;
+        padding: 8px 12px;
+        transition: opacity .4s ease;
+    }
+
 }

@@ -15,14 +15,7 @@
     font-weight: map-get(variables.$weight, light);
     user-select: none;
     transition: background-color .3s ease-in-out, color .3s ease-in-out, transform .3s ease-in-out, box-shadow .3s ease-in-out;
-    &:hover {
-        transform: translateY(4px);
-        fill: variables.$light;
-        background-color: variables.$light;
-        color: var(--bg);
-        box-shadow: 2px 4px 2px -4px rgba(79,79,79,0.2) inset;
 
-    }
 }
 
 .test {
@@ -47,13 +40,11 @@
         color: var(--bg);
     }
 }
-
 ._favorites {
+    position: relative;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    height: 25px;
-    width: 25px;
     text-align: center;
     border-color: variables.$light;
     box-shadow: none;
@@ -93,12 +84,14 @@
         transition: opacity .1s ease;
         transition-delay: 50ms;
     }
+
     &:hover::after {
         transition-delay: 400ms;
         visibility: visible;
         opacity: 1
     }
 }
+
 .--filter {
     display: flex;
     justify-content: center;

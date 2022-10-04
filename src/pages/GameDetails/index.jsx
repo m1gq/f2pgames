@@ -8,7 +8,7 @@ import SystemRequirements from '../../components/SystemRequirements'
 import Screenshots from '../../components/Screenshots'
 import AboutSection from '../../components/AboutSection'
 import {ReactComponent as HeartIcon} from '../../assets/heart-solid.svg'
-
+import { Helmet } from 'react-helmet'
 
 export default function GameDetails() {
     const { gameId } = useParams()
@@ -19,6 +19,7 @@ export default function GameDetails() {
     const { title,
             thumbnail,
             description,
+            short_description,
             developer,
             genre,
             platform,
@@ -29,23 +30,24 @@ export default function GameDetails() {
           } = game
     return (
         <main>
-            <div className="game-details" style={{backgroundImage: `url(${screenshots[0].image ?? thumbnail})`}}>
+            <Helmet>
+                <title>{title} | F2PGames</title>
+                <meta name="description" content={short_description} />
+                <meta name="description" content={title} />
+            </Helmet>
+            <div className="bg-img" style={{backgroundImage: `url(${screenshots[0]?.image ?? thumbnail})`}}>
                 <div className="bg-gradient" />
             </div>
-            <section>
-                <div className="flex">
-                    <div className="le">
+            <section className="game-details">
+                <div className="details-container">
+                    <div className="about-info">
                         <AboutSection
                             title={title}
                             description={description}
                         />
-                        <Screenshots
-                            screenshots={screenshots}
-                            title={title}
-                        />
+                        <SystemRequirements minimum_system_requirements={minimum_system_requirements} />
                         <hr className="line" />
                     </div>
-
                     <GameCard
                         title={title}
                         thumbnail={thumbnail}
@@ -56,7 +58,12 @@ export default function GameDetails() {
                         genre={genre}
                     />
                 </div>
-                <SystemRequirements minimum_system_requirements={minimum_system_requirements} />
+                <Screenshots
+                    screenshots={screenshots}
+                    title={title}
+                />
+
+
             </section>
 
         </main>

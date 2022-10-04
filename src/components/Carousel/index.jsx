@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 export default function Carousel({ children }) {
     const carousel = useRef()
     const [counter, setCounter] = useState(0)
-
+    //
     useEffect(() => {
         if (carousel) {
             carousel.current.children[0].classList.add('visible')

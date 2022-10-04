@@ -5,6 +5,7 @@
 }
 
 .menu {
+    display: inline;
     position: relative;
     cursor: pointer;
     font-size: 1rem;
@@ -25,7 +26,7 @@
     }
 }
 
-.sub-menu {
+.nav-subMenu, .list-menu {
     position: absolute;
     top: 10vh;
     display: flex;
@@ -62,4 +63,14 @@
         background-color: variables.$dark;
     }
 
+}
+
+
+@media screen and (max-width: map-get(variables.$breakpoints, 'laptop')) {
+    .nav-subMenu {
+        position: relative;
+        background: transparent;
+        top: 10px;
+        box-shadow: none;
+    }
 }

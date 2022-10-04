@@ -16,8 +16,6 @@
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     font-size: map-get(variables.$font-size, small);
     transition: transform .4s ease, border-radius .4s ease;
-    cursor: pointer;
-
     .img-wrapper {
         overflow: hidden;
         border-top-right-radius: variables.$radius;
@@ -33,7 +31,7 @@
         overflow: hidden;
         color: variables.$light;
         background: transparent;
-        object-fit: contain;
+        object-fit: cover;
         object-position: center;
         transition: transform .4s ease;
     }
@@ -43,6 +41,7 @@
         padding-inline: .675rem;
         padding-block: .675rem 0;
         width: 100%;
+        color: variables.$light;
         p {
             overflow: hidden;
             text-overflow: ellipsis;
@@ -55,6 +54,8 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        padding-inline: .675rem;
+        padding-block: .675rem 0;
 
         .platform {
             font-size: map-get(variables.$font-size, small);
@@ -93,15 +94,6 @@
             }
         }
 
-        .genre {
-            padding: 4px 8px;
-            background-color: rgba(1, 104, 198, 1);
-            border-radius: variables.$radius;
-            color: #00c2ff;
-            font-weight: map-get(variables.$weight, bold);
-            text-transform: full-width;
-        }
-
         .tags {
             display: flex;
             align-items: center;
@@ -125,24 +117,26 @@
     &:hover img {
         transform: scale(1.03);
     }
+
+
+
+}
+.genre {
+    padding: 4px 8px;
+    background-color: rgb(34, 133, 249);
+    border-radius: variables.$radius;
+    color: variables.$light;
+    font-weight: map-get(variables.$weight, bold);
 }
 
-.showcase-card {
-    @include theme(variables.$transparent, variables.$light);
-    position: relative;
-    width: 22rem;
-
-    .content {
-        position: absolute;
-        bottom: 0;
-        padding-inline: .675rem;
-        padding-block: 0;
-        .tags {
-            &:first-child {
-                margin-left: auto;
-                pointer-events: auto;
-            }
-        }
+@media screen and (max-width: map-get(variables.$breakpoints, 'phone-landscape')) {
+    .card {
+        width: 340px;
     }
+}
 
+@media screen and (max-width: map-get(variables.$breakpoints, 'phone')) {
+    .card {
+        width: 260px;
+    }
 }

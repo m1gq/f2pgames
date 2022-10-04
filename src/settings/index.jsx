@@ -6,5 +6,5 @@ export const options = {
     }
 };
 
-export const BASE_URL = 'https://free-to-play-games-database.p.rapidapi.com/api/games'
+export const BASE_URL = 'https://free-to-play-games-database.p.rapidapi.com/api/games?'
 export const GET_GAME_BY_ID = 'https://free-to-play-games-database.p.rapidapi.com/api/game?id='

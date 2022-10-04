@@ -1,0 +1,49 @@
+@use '../../styles/variables';
+
+.about-info {
+    display: block;
+    width: 60%;
+    padding-top: 5rem;
+}
+
+.extendText {
+    background: none;
+    border: none;
+    color: variables.$blue;
+    font-size: map-get(variables.$font-size, 'medium');
+    cursor: pointer;
+    margin-left: 1rem;
+}
+
+.about-paragraph {
+    max-height: 100%;
+}
+
+.navigateLastPage {
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    top: 16px;
+    left: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    color: variables.$light;
+    border: none;
+    background: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+
+}
+
+@media screen and (max-width: map-get(variables.$breakpoints, 'laptop')) {
+
+
+    .about-info {
+        width: 100%;
+        padding-top: 1rem;
+    }
+
+}

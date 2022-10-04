@@ -45,37 +45,12 @@
 
     }
 
-    aside {
-        width: 50%;
 
-        .icon {
-            display: block;
-            vertical-align: middle;
-            width: 50%;
-            margin-inline: auto;
-            fill: var(--icon-fill);
-        }
-
-
-    }
 }
 
 .highlight {
     position: relative;
     font-family: 'Bitter', sans-serif;
     font-weight: 900;
-    isolation: isolate;
-}
-
-.highlight::before {
-    content: '';
-    position: absolute;
-    display: flex;
-    bottom: 10px;
-    left: 0;
-    height: 8px;
-    width: 100%;
-    z-index: -1;
-    background: var(--bg);
-    border-radius: 1px;
+    color: var(--bg);
 }

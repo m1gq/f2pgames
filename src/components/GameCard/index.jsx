@@ -1,8 +1,9 @@
+import './styles.scss'
 export default function GameCard({ title, thumbnail, platform, release_date, publisher, developer, genre}) {
     return (
         <div className='game'>
             <h2 className="game-title">{title}</h2>
-            <div>
+            <div className="game-card">
                 <img src={thumbnail} alt={title} />
                 <ul className="game-info">
                     <li className="flex"><h3 className="tests">Platform:</h3> {platform}</li>
@@ -10,7 +11,7 @@ export default function GameCard({ title, thumbnail, platform, release_date, pub
                     <li className="flex"><h3>Publisher:</h3> {publisher}</li>
                     <li className="flex"><h3>Developer:</h3> {developer}</li>
                     <hr className="line" />
-                    <div className="flex">{genre.split(' ').map(element => <li className="genre" key={element}>{element}</li>)}</div>
+                    <ul className="genre-container">{genre.split(' ').map(element => <li className="genre" key={element}>{element}</li>)}</ul>
                 </ul>
             </div>
         </div>

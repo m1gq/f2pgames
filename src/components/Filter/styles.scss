@@ -1,10 +1,15 @@
+@use '../../styles/variables';
+
 .filter-container {
     position: relative;
-    display: block;
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    gap: 10px;
     text-align: center;
-    padding: 2rem;
-    padding-bottom: 0;
-    height: 20vh;
+    min-height: 14vh;
     & h3 {
         margin-bottom: 1rem;
     }
@@ -18,10 +23,24 @@
 .filter {
     position: absolute;
     display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
     left: 50%;
     transform: translate(-50%);
-    width: 60%;
-    justify-content: space-around;
+    width: 100%;
     align-items: center;
+    justify-content: space-around;
     z-index: 40;
+}
+
+.filter-btn {
+    padding: 10.5px;
+    height: 24px;
+    background: variables.$lighter-dark;
+    border-radius: variables.$radius;
+}
+
+.filter-menu {
+    display: flex;
+    gap: 10px;
 }

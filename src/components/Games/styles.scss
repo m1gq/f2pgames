@@ -1,9 +1,13 @@
+@use '../../styles/variables';
 .card-wrapper {
     padding-inline: 5rem;
     padding-block: 1rem 2rem;
-
+    overflow: hidden;
     &:first-child {
         margin-bottom: 2rem;
+    }
+    @media screen and (max-width: map-get(variables.$breakpoints, 'laptop')) {
+        padding-inline: 2rem;
     }
 }
 
@@ -11,7 +15,9 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 2rem 0;
-    place-items: center;
+    min-height: 100vh;
+    align-content: flex-start;
+    justify-items: center;
     &:hover {
 
     }
@@ -20,6 +26,12 @@
         padding: 2rem;
         place-items: center;
     }
+
+    @media screen and (max-width: map-get(variables.$breakpoints, 'laptop')) {
+        padding: 1rem;
+    }
+
+
 }
 
 .sort-by {
@@ -27,4 +39,9 @@
     justify-content: center;
     align-items: center;
     gap: 1rem;
+}
+
+.notFound {
+    text-align: center;
+    font-size: 2.2rem;
 }

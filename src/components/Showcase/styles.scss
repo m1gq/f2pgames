@@ -1,8 +1,16 @@
 @use '../../styles/variables';
 .showcase {
-    padding: 2rem 5rem;
+    padding: 2rem 3rem;
     background-color: variables.$lighter-dark;
     box-shadow: variables.$shadow;
+
+    @media screen and (max-width: map-get(variables.$breakpoints, 'phone-landscape')) {
+        padding: 2rem 3rem;
+    }
+
+    @media screen and (max-width: map-get(variables.$breakpoints, 'tablet')) {
+        text-align: center;
+    }
 
     .showcase-title {
         font-size: map-get(variables.$font-size, extra-large);

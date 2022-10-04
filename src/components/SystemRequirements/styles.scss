@@ -1,0 +1,8 @@
+@use '../../styles/variables';
+
+.system-requirements li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-align: left;
+}
